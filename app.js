@@ -3,6 +3,7 @@ const dotenv = require ("dotenv")
 dotenv.config();
 const cors = require("cors")
 const mongoose = require("mongoose");
+const AuthenticationRoutes = require('./routes/Auth')
 
 const port = process.env.PORT || 5001;
 const app = express()
@@ -23,6 +24,7 @@ app.get('/', (req, res)=>{
     res.send({message:"new project"})
 })
 
+app.use('/auth', AuthenticationRoutes)
 
 
 
