@@ -66,7 +66,7 @@ router.post('/login', async (req, res) => {
         console.error(error)
         return res.status(400).json({error: "Login Failed"})
     }
-})
+}, checkTokenBlackList)
 
 router.post('/logout', (req,res)=>{
    try{
